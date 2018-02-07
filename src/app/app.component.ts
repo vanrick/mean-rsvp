@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  Observable } from 'rxjs/Observable';
+import { AuthService } from './auth/auth.service';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/debounceTime';
 
@@ -8,14 +9,17 @@ import 'rxjs/add/operator/debounceTime';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
   navOpen: boolean;
   minHeight: string;
-  private_initWinHeight = 0;
+  private _initWinHeight = 0;
 
-  constructor() {}
+  constructor(private auth: AuthService) {
+    auth.handleAuth();
+  }
 
-  OnInit() {
+  ngOnInit() {
     Observable.fromEvent(window, 'resize')
       .debounceTime(200)
       .subscribe((event) => this._resizeFn(event));
