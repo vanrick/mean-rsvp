@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {  Observable } from 'rxjs/Observable';
-import { AuthService } from './auth/auth.service';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/debounceTime';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
