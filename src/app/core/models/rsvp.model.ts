@@ -7,5 +7,5 @@ export class Rsvp.Model {
         public guests?: number,
         public comments?: string,
         public _id?: string
-      ) { }
+      ), { }
 }
