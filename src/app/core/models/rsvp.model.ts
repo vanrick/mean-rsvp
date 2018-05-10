@@ -1,4 +1,4 @@
-export class Rsvp.Model {
+export class RsvpModel {
     constructor(
         public userId: string,
         public name: string,
@@ -7,5 +7,5 @@ export class Rsvp.Model {
         public guests?: number,
         public comments?: string,
         public _id?: string
-      ), { }
+      ) { }
 }
